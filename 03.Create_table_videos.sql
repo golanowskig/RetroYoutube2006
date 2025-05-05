@@ -1,0 +1,13 @@
+--Crear tabla videos
+DROP TABLE IF EXISTS Videos
+CREATE TABLE Videos
+(
+	Video_ID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Titulos_video NVARCHAR (100) UNIQUE NOT NULL, 
+	Usuari_ID_fk INT,
+	CONSTRAINT usuariID_VaU FOREIGN KEY (Usuari_ID_fk) REFERENCES Usuaris(Usuari_ID),
+	Upload_Date DATETIME DEFAULT GETDATE () NOT NULL,
+	TotalRating INT NOT NULL DEFAULT 0,
+	TotalVotes INT DEFAULT 0,
+);
+GO

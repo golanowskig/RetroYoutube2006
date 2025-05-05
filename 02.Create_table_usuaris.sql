@@ -1,0 +1,10 @@
+--Crear tabla Usuaris
+DROP TABLE IF EXISTS Usuaris
+CREATE TABLE Usuaris
+(
+	Usuari_ID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Usuari_name VARCHAR (25) UNIQUE NOT NULL,
+	Creation_Date DATETIME DEFAULT GETDATE() NOT NULL
+);
+GO
+
